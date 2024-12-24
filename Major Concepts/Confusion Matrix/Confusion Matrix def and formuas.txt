@@ -1,0 +1,70 @@
+Confusion Matrix: Definition and Key Metrics
+A confusion matrix is a table used to evaluate the performance of a classification model. It summarizes the number of correct and incorrect predictions made by the model, broken down by each class. This matrix helps in understanding the types of errors the model is making.
+
+
+Table :
+
+Predicted Positive	Predicted Negative
+Actual Positive	True Positive (TP)	False Negative (FN)
+Actual Negative	False Positive (FP)	True Negative (TN)
+
+
+
+True Positive (TP): The model correctly predicted the positive class.
+True Negative (TN): The model correctly predicted the negative class.
+False Positive (FP): The model incorrectly predicted the positive class (Type I error).
+False Negative (FN): The model incorrectly predicted the negative class (Type II error).
+
+Key Metrics Derived from the Confusion Matrix
+
+
+Accuracy:
+
+Definition: The ratio of correctly predicted instances to the total instances.
+Formula:Accuracy=TP+TN+FP+FNTP+TN​
+
+Precision:
+
+Definition: The ratio of correctly predicted positive observations to the total predicted positives.
+Formula:Precision=TP+FPTP
+
+Recall (Sensitivity or True Positive Rate):
+
+Definition: The ratio of correctly predicted positive observations to all observations in the actual class.
+Formula:Recall=TP+FNTP​
+
+
+F1 Score:
+
+Definition: The harmonic mean of precision and recall, providing a balance between the two.
+Formula:F1 Score=2×Precision+RecallPrecision×Recall​
+
+
+ROC-AUC (Receiver Operating Characteristic - Area Under Curve):
+Definition: A graphical representation of a classifier’s performance across all classification thresholds. The AUC represents the degree or measure of separability.
+Interpretation: Higher AUC indicates a better performing model.
+
+Example
+Let’s consider a binary classification problem where we predict whether an email is spam (positive class) or not spam (negative class). After running the model, we get the following results:
+
+True Positives (TP): 50
+True Negatives (TN): 100
+False Positives (FP): 10
+False Negatives (FN): 5
+
+Using these values, we can calculate the metrics:
+
+
+Accuracy:
+Accuracy=50+100+10+550+100​=165150​≈0.91
+
+
+Precision:
+Precision=50+1050​=6050​≈0.83
+
+
+Recall:
+Recall=50+550​=5550​≈0.91
+
+F1 Score:
+F1 Score=2×0.83+0.910.83×0.91​≈0.87

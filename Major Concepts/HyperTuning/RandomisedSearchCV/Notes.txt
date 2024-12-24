@@ -1,0 +1,14 @@
+Random Search in Hyperparameter Tuning
+Concept
+Hyperparameters are parameters that are set before the learning process begins. They are not learned from the data but are crucial for determining the model's behavior. Examples include the learning rate in neural networks, the number of trees in a random forest, and the regularization strength in SVMs.
+Random Search is a technique used to find the optimal hyperparameters by sampling a fixed number of combinations from predefined distributions of hyperparameters, rather than testing every possible combination as in Grid Search.
+Pros and Cons
+Pros:
+
+Faster Execution: Random Search is generally faster than Grid Search, especially when dealing with high-dimensional hyperparameter spaces. This is because it does not evaluate every single combination.
+Effective Exploration: Random Search can potentially discover better hyperparameter combinations since it samples randomly, which may cover a wider range of the hyperparameter space.
+Flexible: It allows you to specify distributions for hyperparameters, providing flexibility in exploring the parameter space.
+Cons:
+
+Less Exhaustive: Random Search does not guarantee finding the optimal set of hyperparameters since it only samples a fixed number of combinations.
+Potentially Suboptimal: If the number of iterations is too low, it may miss optimal or near-optimal combinations, especially in small or narrow hyperparameter spaces.

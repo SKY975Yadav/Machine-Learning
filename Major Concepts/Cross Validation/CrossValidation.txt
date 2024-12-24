@@ -1,0 +1,18 @@
+Leave-P-Out Cross-Validation (LPOCV)
+Leave-P-Out Cross-Validation (LPOCV) is an exhaustive cross-validation technique where p observations are left out as the validation set, and the remaining n - p observations are used as the training set. This process is repeated for all possible ways to partition the dataset into a training set and a validation set of size p.
+
+Key Concepts:
+Exhaustive: LPOCV is exhaustive because it evaluates the model on all possible combinations of p observations left out.
+Flexibility: You can choose the value of p based on the size of your dataset and the desired level of validation.
+Computational Cost: The number of possible combinations grows combinatorially with the size of the dataset, making LPOCV computationally expensive for large datasets.
+
+Example:
+Let’s consider a dataset with 4 samples: ([1, 2, 3, 4]). If we set p = 2, LPOCV will generate the following combinations:
+
+Training set: ([3, 4]), Validation set: ([1, 2])
+Training set: ([2, 4]), Validation set: ([1, 3])
+Training set: ([2, 3]), Validation set: ([1, 4])
+Training set: ([1, 4]), Validation set: ([2, 3])
+Training set: ([1, 3]), Validation set: ([2, 4])
+Training set: ([1, 2]), Validation set: ([3, 4])
+

@@ -1,0 +1,115 @@
+There are various types of plots, each suited for different types of data and insights. Here's a breakdown of common plot types, their definitions, and when to use them:
+
+1. Line Plot
+Definition: A graph that uses lines to connect individual data points.
+When to Use: Best for showing trends over time or continuous data.
+Example: Stock prices over time, sales trends.
+python
+Copy code
+sns.lineplot(x='year', y='sales', data=data)
+2. Bar Plot
+Definition: Displays categorical data with rectangular bars with lengths proportional to the values they represent.
+When to Use: For comparing different categories.
+Example: Sales of different product categories.
+python
+Copy code
+sns.barplot(x='category', y='sales', data=data)
+3. Histogram
+Definition: Shows the distribution of a single numeric variable by splitting it into bins.
+When to Use: To visualize the frequency distribution of data.
+Example: Age distribution in a dataset.
+python
+Copy code
+sns.histplot(data['age'], bins=10)
+4. Box Plot
+Definition: Displays the distribution of data based on a five-number summary (minimum, first quartile, median, third quartile, and maximum).
+When to Use: To detect outliers and compare distributions across categories.
+Example: Salary distribution across different job roles.
+python
+Copy code
+sns.boxplot(x='job', y='salary', data=data)
+5. Violin Plot
+Definition: Combines a box plot with a kernel density estimate to show the distribution of data.
+When to Use: For understanding the distribution and density of the data.
+Example: Distribution of exam scores across different classes.
+python
+Copy code
+sns.violinplot(x='class', y='exam_score', data=data)
+6. Scatter Plot
+Definition: Uses points to represent the values of two different variables.
+When to Use: To show the relationship or correlation between two continuous variables.
+Example: Height vs. weight, GDP vs. life expectancy.
+python
+Copy code
+sns.scatterplot(x='height', y='weight', data=data)
+7. Pair Plot
+Definition: A grid of scatter plots and histograms showing pairwise relationships between variables.
+When to Use: For multivariate data exploration, especially for visualizing relationships between several numerical variables.
+Example: Visualizing relationships between age, income, and spending score in a dataset.
+python
+Copy code
+sns.pairplot(data)
+8. Heatmap
+Definition: Displays data as a matrix of colored cells where the color intensity represents the data values.
+When to Use: To visualize correlation matrices, and frequency of occurrences.
+Example: Correlation between variables in a dataset.
+python
+Copy code
+sns.heatmap(correlation_matrix)
+9. KDE Plot (Kernel Density Estimate)
+Definition: A smoothed curve that represents the probability density function of a continuous variable.
+When to Use: For estimating the probability distribution of a variable.
+Example: Estimating the distribution of salaries.
+python
+Copy code
+sns.kdeplot(data['salary'])
+10. Joint Plot
+Definition: Combines scatter plots and histograms to show the distribution of two variables and their relationship.
+When to Use: To analyze the relationship between two variables along with their marginal distributions.
+Example: Weight vs. height with distribution on the margins.
+python
+Copy code
+sns.jointplot(x='weight', y='height', data=data)
+11. Facet Grid
+Definition: A multi-plot grid that can display the same plot type for different subsets of the data.
+When to Use: For visualizing trends and comparisons across multiple subsets of the data.
+Example: Comparing sales trends across multiple regions.
+python
+Copy code
+g = sns.FacetGrid(data, col='region')
+g.map(sns.lineplot, 'year', 'sales')
+12. Swarm Plot
+Definition: Displays individual data points along an axis, arranged in a way that minimizes overlap.
+When to Use: To visualize the distribution of a categorical variable along with the data points.
+Example: Distribution of tips across days in a restaurant.
+python
+Copy code
+sns.swarmplot(x='day', y='tip', data=tips)
+13. Count Plot
+Definition: Similar to a bar plot, but it counts the occurrences of each category.
+When to Use: To visualize the frequency of categories in a dataset.
+Example: Number of people in different job roles.
+python
+Copy code
+sns.countplot(x='job', data=data)
+14. Area Plot
+Definition: Similar to a line plot, but the area under the line is filled with color.
+When to Use: To display the cumulative value over time.
+Example: Population growth over the years.
+python
+Copy code
+data.plot.area()
+15. Pie Chart
+Definition: A circular chart divided into sectors representing percentages.
+When to Use: For showing the proportional distribution of categories.
+Example: Market share of different companies.
+python
+Copy code
+plt.pie(values, labels=labels)
+16. Barh Plot
+Definition: A horizontal bar plot.
+When to Use: To compare categories when the labels are long, or for readability.
+Example: Comparison of job roles.
+python
+Copy code
+sns.barplot(y='job', x='salary', data=data)

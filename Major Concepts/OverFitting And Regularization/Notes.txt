@@ -1,0 +1,78 @@
+Definition of Overfitting
+Overfitting occurs when a machine learning model learns the noise and details of the training data to the extent that it negatively impacts its performance on new, unseen data. Instead of capturing the underlying pattern, the model becomes overly complex and fits the training data too closely. This leads to high accuracy on the training set but poor generalization to validation or test sets.
+
+How Overfitting Affects Model Performance
+Training Performance: The model shows very low error on the training data because it has memorized the training examples.
+Validation/Test Performance: The model exhibits significantly higher error on validation or test data, indicating poor generalization.
+
+Signs of Overfitting
+High Training Accuracy, Low Validation/Test Accuracy: When a model achieves very high accuracy on the training set but performs poorly on validation or test sets, it is a strong indicator of overfitting.
+
+Learning Curves: When plotting learning curves (training and validation errors against the number of training epochs), overfitting is often visible as the training error continues to decrease while the validation error begins to increase.
+
+Example Learning Curve:
+
+Training Error: Decreases consistently as the model learns more about the data.
+Validation Error: Decreases initially, then starts to increase, indicating that the model is fitting the training data too closely.
+
+Complex Models: Overly complex models (e.g., deep neural networks with many layers, polynomial regression with high degrees) are more prone to overfitting, especially when the training data is limited.
+
+
+
+Regularization Techniques (2 Hours)
+Regularization is a technique used to reduce the complexity of a machine learning model, especially when dealing with overfitting. It does so by adding a penalty to the loss function, discouraging the model from fitting too closely to the training data. Two of the most common regularization techniques are L1 (Lasso Regression) and L2 (Ridge Regression).
+
+1. L1 Regularization (Lasso Regression)
+Definition:
+L1 regularization adds a penalty term to the cost function that is proportional to the absolute value of the coefficients. This encourages sparsity in the model, meaning that it can reduce some of the coefficients to exactly zero. This feature makes L1 regularization a good choice when we expect many of the features to be irrelevant.
+
+The cost function for L1 regularization in linear regression is:
+
+J(θ)=MSE(θ)+λ∑ ∣θi∣
+
+Where 
+𝜆
+λ is the regularization strength.
+
+Impact on Coefficients:
+
+L1 regularization tends to shrink some coefficients to zero, effectively performing feature selection by eliminating less important features.
+This is beneficial when you have high-dimensional data with many irrelevant features, as it simplifies the model and makes it more interpretable.
+
+
+
+
+
+2. L2 Regularization (Ridge Regression)
+Definition:
+L2 regularization adds a penalty term to the cost function that is proportional to the square of the coefficients. It encourages smaller coefficients overall, preventing any one feature from having too much influence on the model.
+
+The cost function for L2 regularization is:
+
+ 
+J(θ)=MSE(θ)+λ∑ θ^2
+
+
+Impact on Coefficients:
+
+L2 regularization tends to shrink all coefficients but does not reduce any coefficients to zero. This makes it useful when all features are believed to contribute to the output, but you want to prevent overfitting.
+The model becomes less sensitive to individual feature values but retains all features.
+Implementation in Scikit-Learn:
+
+
+Scenarios:
+
+L1 Regularization (Lasso):
+Preferable when you believe that some features in the dataset are irrelevant, and you want a sparse model.
+Use cases: Feature selection, high-dimensional datasets where interpretability is crucial.
+L2 Regularization (Ridge):
+Preferable when you expect all features to contribute to the output, but you want to prevent overfitting.
+Use cases: Situations where no features should be eliminated but some need to be reduced in influence.
+Practical Example:
+If you’re working with a dataset with 1000 features, but you suspect that only 50 of them are truly important, L1 regularization is likely a better choice. On the other hand, if all features are thought to contribute somewhat equally, but the model is overfitting, L2 regularization would be more appropriate.
+
+Summary
+L1 Regularization (Lasso) reduces coefficients to zero, effectively selecting features.
+L2 Regularization (Ridge) shrinks coefficients but retains all features, preventing overfitting.
+The choice of regularization depends on the dataset and the problem you're solving.
+By implementing both L1 and L2 regularization and comparing their effects on different datasets, you’ll develop a deeper understanding of when and how to use each technique.

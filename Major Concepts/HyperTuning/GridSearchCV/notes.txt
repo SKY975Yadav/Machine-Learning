@@ -1,0 +1,14 @@
+Concept What is Grid Search
+Grid Search is a hyperparameter tuning method where a model is trained and evaluated using every possible combination of a predefined set of hyperparameter values. The goal is to find the best hyperparameter combination that maximizes model performance.
+In essence, it systematically searches through a grid (matrix) of hyperparameters, training and testing a model for each combination, then selects the best one based on cross-validation performance.
+For example, if you're tuning an SVM model and want to find the best values for C and kernel, Grid Search will try every possible combination of those hyperparameters and report the best one.
+
+Pros and Cons of Grid Search
+Pros
+
+Comprehensive It tests every possible combination of hyperparameters within the specified grid, so you’re guaranteed to find the best configuration from that grid.
+Simple to understand and implement Grid Search is conceptually straightforward, making it easy to set up and apply to different models.
+Cons
+
+Computationally Expensive As the number of hyperparameters increases, the search space grows exponentially. If you have many hyperparameters or large datasets, this method can become extremely time-consuming.
+Inefficient for Large Spaces Often, many combinations don’t improve performance. Random Search or more advanced techniques can be more efficient for large hyperparameter spaces.

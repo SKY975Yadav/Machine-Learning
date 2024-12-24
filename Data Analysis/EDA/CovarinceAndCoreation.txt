@@ -1,0 +1,35 @@
+Covariance measures the directional relationship between two variables. It indicates whether the variables tend to increase or decrease together. However, the magnitude of covariance is not standardized, making it difficult to interpret.
+Formula
+Cov(X,Y)=(∑n​(Xi​−μX​)(Yi​−μY​))n-1
+and 
+
+Where
+
+( X ) and ( Y ) are the variables.
+( mu_X ) and ( mu_Y ) are the means of ( X ) and ( Y ).
+( n ) is the number of data points.
+
+Interpretation
+
+Positive Covariance Both variables increase together.
+Negative Covariance One variable increases while the other decreases.
+Zero Covariance No linear relationship between the variables.
+
+Correlation measures both the strength and direction of the linear relationship between two variables. It is standardized, making it easier to interpret.
+Formula
+ρ(X,Y)=YCov(X,Y)​σX​σ
+Where
+
+( sigma_X ) and ( sigma_Y ) are the standard deviations of ( X ) and ( Y ).
+Interpretation
+
+Correlation Coefficient ((rho)) Ranges from -1 to 1.
++1 Perfect positive correlation.
+-1 Perfect negative correlation.
+0 No linear relationship.
+
+Key Differences
+Units Covariance is in units obtained by multiplying the units of the two variables, while correlation is dimensionless.
+Range Covariance can take any value, while correlation ranges from -1 to 1.
+Interpretation Correlation provides a normalized measure of the linear relationship, making it easier to interpret.
+
